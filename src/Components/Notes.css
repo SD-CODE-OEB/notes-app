@@ -1,0 +1,189 @@
+a {
+  text-decoration: none;
+  color: #333;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  position: relative;
+}
+.form-container .navigate-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  transition: all 0.4s ease-in-out;
+}
+.form-container .navigate-back:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px rgba(26, 11, 188, 0.3));
+  color: #007bff;
+}
+.navigate-back .icon {
+  font-size: 3rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.navigate-back label {
+  font-size: 1.5rem;
+  padding-top: 6px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-container p {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.form-container label {
+  font-size: 1.5rem;
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+.form-container input {
+  width: 95%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-container textarea {
+  width: 95%;
+  padding: 10px 20px;
+  min-height: 100px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form-container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.note-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  width: 80%;
+}
+.note-container .notes-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.note {
+  width: 220px;
+  height: 220px;
+  margin: 10px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #bbb6b6;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: hidden;
+}
+button.note {
+  justify-content: center;
+  background-color: #ccc;
+  padding: 20px;
+}
+.note .note-title {
+  font-size: 1.5rem;
+  width: 100%;
+  background-color: #bbb6b6;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  padding: 0 10px;
+}
+.note .note-content {
+  font-size: 1.2rem;
+  width: inherit;
+  height: 100%;
+  padding: 15px;
+  background-color: #f0f0f0;
+  text-align: left;
+  word-wrap: break-word;
+}
+.notes-box .plus-icon {
+  font-size: 3rem;
+  color: #291a22;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.notes-box .plus-icon:hover {
+  color: #007bff;
+  scale: 1.1;
+}
+.notes-box .note-add-txt {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.notes-box .btns-box {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.btns-box button {
+  color: white;
+  width: 56%;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btns-box .note-edit:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+.btns-box .note-delete:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+.btns-box .note-edit {
+  left: -15px;
+  background-color: #ffc107;
+}
+.btns-box .note-delete {
+  background-color: #dc3545;
+}
