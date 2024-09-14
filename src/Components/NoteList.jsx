@@ -4,6 +4,8 @@ import { CiCirclePlus } from "react-icons/ci";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const NoteList = () => {
+  const PATH = process.env.REACT_APP_PATH;
+  console.log(PATH);
   const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
   const deleteNote = async (id) => {
@@ -41,7 +43,7 @@ const NoteList = () => {
                   type="button"
                   className="note-edit"
                   onClick={() => {
-                    navigate(`/notes/${note._id}`);
+                    navigate(`${PATH}/notes/${note._id}`);
                   }}
                 >
                   edit
@@ -59,7 +61,7 @@ const NoteList = () => {
         <button
           className="note add-note"
           onClick={() => {
-            navigate("/notes/new");
+            navigate(`${PATH}/notes/new`);
           }}
         >
           <CiCirclePlus className="plus-icon" />
