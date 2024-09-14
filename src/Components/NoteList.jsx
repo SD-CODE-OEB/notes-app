@@ -5,12 +5,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const NoteList = () => {
   const PATH = process.env.REACT_APP_PATH;
+  const B_PATH = process.env.BACKEND_APP_PATH;
   console.log(PATH);
   const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
   const deleteNote = async (id) => {
     await axios
-      .delete(`http://localhost:5000/notes/${id}`)
+      .delete(`${B_PATH}/notes/${id}`)
       .then(() => {
         setNotes(notes.filter((note) => note._id !== id));
       })
@@ -20,7 +21,7 @@ const NoteList = () => {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5000/notes")
+      .get(`${B_PATH}/notes`)
       .then((response) => {
         setNotes(response.data);
       })

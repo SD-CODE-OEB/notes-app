@@ -7,11 +7,12 @@ import { CiSquareChevLeft } from "react-icons/ci";
 
 const NoteForm = () => {
   const PATH = process.env.REACT_APP_PATH;
+  const B_PATH = process.env.BACKEND_APP_PATH;
   const [note, setNote] = useState({ title: "", content: "" });
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/notes/${id}`)
+      .get(`${B_PATH}/notes/${id}`)
       .then((res) => {
         const data = res.data;
         setNote((prev) => ({
@@ -29,12 +30,12 @@ const NoteForm = () => {
   const handleNote = async (e) => {
     try {
       if (id) {
-        await axios.put(`http://localhost:5000/notes/${id}`, note).then(() => {
+        await axios.put(`${B_PATH}/notes/${id}`, note).then(() => {
           console.log("updated");
           navigate(`${PATH}`);
         });
       } else {
-        await axios.post("http://localhost:5000/notes/new", note).then(() => {
+        await axios.post(`${B_PATH}/notes/new`, note).then(() => {
           navigate(`${PATH}`);
         });
       }
